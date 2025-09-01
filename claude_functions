@@ -1,0 +1,78 @@
+# Claude 配置切换和启动函数
+# 密钥通常是以"sk-"开头的
+export FREE_API_KEY="替换成你自己的密钥" # 注册网址： https://anyrouter.top
+export KIMI_API_KEY="替换成你自己的密钥" # 注册网址： https://www.moonshot.cn/
+export TAOBAO_API_KEY="替换成你自己的密钥" # 可以自己去找一个，也可以加我微信： ithulianwang 分享一个我验证过且效果不错的店铺（加我有优惠），这个套餐原价是 299元 3个月可以请求5000次左右
+export DEEPSEEK_API_KEY="替换成你自己的密钥" # 注册网址： https://www.deepseek.com/
+export AICODE_MIRROR_API_KEY="替换成你自己的密钥" # 注册网址： https://www.aicodemirror.com/register?invitecode=YWJB6R  加我有优惠， 微信： ithulianwang
+
+
+claude_free() {
+    export ANTHROPIC_AUTH_TOKEN=${FREE_API_KEY}
+    export ANTHROPIC_BASE_URL="https://anyrouter.top"
+    unset ANTHROPIC_API_KEY 2>/dev/null
+    echo "切换到 Free 配置并启动 Claude"
+    claude "$@"
+}
+
+claude_aicode() {
+    export ANTHROPIC_AUTH_TOKEN=${AICODE_MIRROR_API_KEY}
+    export ANTHROPIC_BASE_URL="https://api.aicodemirror.com/api/claudecode"
+    export ANTHROPIC_API_KEY=${AICODE_MIRROR_API_KEY}
+    echo "切换到 aicodemirror 配置并启动 Claude"
+    claude "$@"
+}
+
+
+claude_kimi() {
+    export ANTHROPIC_AUTH_TOKEN=${KIMI_API_KEY}
+    export ANTHROPIC_BASE_URL="https://api.moonshot.cn/anthropic"
+    unset ANTHROPIC_API_KEY 2>/dev/null
+    echo "切换到 Kimi 配置并启动 Claude"
+    claude "$@"
+}
+
+claude_taobao() {
+    export ANTHROPIC_AUTH_TOKEN=${TAOBAO_API_KEY}
+    export ANTHROPIC_API_KEY=${TAOBAO_API_KEY}
+    export ANTHROPIC_BASE_URL="https://code.ppchat.vip"
+    echo "切换到 Taobao 配置并启动 Claude"
+    claude "$@"
+}
+
+claude_deepseek() {
+    export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic
+    export ANTHROPIC_AUTH_TOKEN=${DEEPSEEK_API_KEY}
+    export API_TIMEOUT_MS=600000
+    export ANTHROPIC_MODEL=deepseek-chat
+    export ANTHROPIC_SMALL_FAST_MODEL=deepseek-chat
+    echo "切换到 Deepseek 配置并启动 Claude"
+    claude "$@"
+}
+
+# 显示当前 Claude 配置
+claude_status() {
+    echo "当前 Claude 配置:"
+    echo "ANTHROPIC_AUTH_TOKEN: ${ANTHROPIC_AUTH_TOKEN:0:10}... (前10位)" 2>/dev/null || echo "ANTHROPIC_AUTH_TOKEN: 未设置"
+    echo "ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:0:10}... (前10位)" 2>/dev/null || echo "ANTHROPIC_API_KEY: 未设置"
+    echo "ANTHROPIC_BASE_URL: ${ANTHROPIC_BASE_URL:-未设置}"
+}
+
+# 清除 Claude 配置
+claude_clear() {
+    unset ANTHROPIC_AUTH_TOKEN 2>/dev/null
+    unset ANTHROPIC_API_KEY 2>/dev/null
+    unset ANTHROPIC_BASE_URL 2>/dev/null
+    echo "已清除 Claude 配置"
+}
+
+# 通用启动函数（使用当前配置）
+claude_start() {
+    if [ -z "$ANTHROPIC_AUTH_TOKEN" ]; then
+        echo "错误: 未设置 ANTHROPIC_AUTH_TOKEN，请先选择配置"
+        echo "可用命令: claude_free, claude_kimi, claude_taobao, claude_deepseek, claude_aicode"
+        return 1
+    fi
+    echo "使用当前配置启动 Claude"
+    claude "$@"
+}
