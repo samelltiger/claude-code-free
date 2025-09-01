@@ -123,6 +123,8 @@
 如有问题或需要支持：
 - 提交 [Issue](https://github.com/samelltiger/claude-code-free/issues)
 - 通过微信联系: `ithulianwang` (备注 "claude")
+- 公众号：
+![](images/微信公众号.jpg)
 
 ## Claude code价格全场最低
 ![](./images/claude-code-month-price.png)
