@@ -4,6 +4,8 @@
 
 [70%成本降幅！不装软件混搭Claude Code，我的年省2500元秘籍](content.md)
 
+![four-window-split-add-text.png](./images/four-window-split-add-text.png)
+
 ## ✨ 特性
 
 - **成本降低**: 相比标准 Claude Code 订阅，成本降低高达 70%
