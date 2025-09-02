@@ -11,6 +11,8 @@ claude_free() {
     export ANTHROPIC_AUTH_TOKEN=${FREE_API_KEY}
     export ANTHROPIC_BASE_URL="https://anyrouter.top"
     unset ANTHROPIC_API_KEY 2>/dev/null
+    unset ANTHROPIC_MODEL 2>/dev/null
+    unset ANTHROPIC_SMALL_FAST_MODEL 2>/dev/null
     echo "切换到 Free 配置并启动 Claude"
     claude "$@"
 }
@@ -19,6 +21,8 @@ claude_aicode() {
     export ANTHROPIC_AUTH_TOKEN=${AICODE_MIRROR_API_KEY}
     export ANTHROPIC_BASE_URL="https://api.aicodemirror.com/api/claudecode"
     export ANTHROPIC_API_KEY=${AICODE_MIRROR_API_KEY}
+    unset ANTHROPIC_MODEL 2>/dev/null
+    unset ANTHROPIC_SMALL_FAST_MODEL 2>/dev/null
     echo "切换到 aicodemirror 配置并启动 Claude"
     claude "$@"
 }
@@ -28,6 +32,8 @@ claude_kimi() {
     export ANTHROPIC_AUTH_TOKEN=${KIMI_API_KEY}
     export ANTHROPIC_BASE_URL="https://api.moonshot.cn/anthropic"
     unset ANTHROPIC_API_KEY 2>/dev/null
+    unset ANTHROPIC_MODEL 2>/dev/null
+    unset ANTHROPIC_SMALL_FAST_MODEL 2>/dev/null
     echo "切换到 Kimi 配置并启动 Claude"
     claude "$@"
 }
@@ -36,6 +42,8 @@ claude_taobao() {
     export ANTHROPIC_AUTH_TOKEN=${TAOBAO_API_KEY}
     export ANTHROPIC_API_KEY=${TAOBAO_API_KEY}
     export ANTHROPIC_BASE_URL="https://code.ppchat.vip"
+    unset ANTHROPIC_MODEL 2>/dev/null
+    unset ANTHROPIC_SMALL_FAST_MODEL 2>/dev/null
     echo "切换到 Taobao 配置并启动 Claude"
     claude "$@"
 }
@@ -63,6 +71,8 @@ claude_clear() {
     unset ANTHROPIC_AUTH_TOKEN 2>/dev/null
     unset ANTHROPIC_API_KEY 2>/dev/null
     unset ANTHROPIC_BASE_URL 2>/dev/null
+    unset ANTHROPIC_MODEL 2>/dev/null
+    unset ANTHROPIC_SMALL_FAST_MODEL 2>/dev/null
     echo "已清除 Claude 配置"
 }
 
