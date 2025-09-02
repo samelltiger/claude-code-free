@@ -115,6 +115,10 @@ source ~/.zshrc
 
 ![four-window-split-add-text.png](./images/four-window-split-add-text.png)
 
+> 注意
+> 由于新版本的Claude code 会默认使用opus模型，在使用kimi或者其他平台时，会报错
+> 你需要执行 `/model`命令，将模型切换回 Sonnet
+
 本来我还想引入魔塔大模型平台的，他每天免费提供2000次请求，理论上够我们每天白嫖的额度了。但是试了下接口发现给我报错了，我拿到的报错是 `400 tool_calls not supported`，说明魔塔目前只支持 chat completion，还没对齐 Anthropic 的 tool use！如果有能够调通的大佬，还麻烦在评论区赐教一下。
 
 就目前我的使用来看，用这套国内外模型混搭的方案足够我用了。我一般先试试免费公益的claude code中转网站的能不能用，如果不能用就再来判断问题的难易程度，看是用付费的claude还是国产模型，如果claude封号了，中转接口暂时挂了，我会用国产模型，优先使用Deepseek v3.1，kimi k2模型我一般在写作时作为创意写作的辅助模型。

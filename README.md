@@ -70,6 +70,10 @@
 | `claude_status` | 显示当前配置 | - |
 | `claude_clear` | 清除配置 | - |
 
+> 注意
+> 由于新版本的Claude code 会默认使用opus模型，在使用kimi或者其他平台时，会报错
+> 你需要执行 `/model`命令，将模型切换回 Sonnet
+
 ## 🔧 配置说明
 
 ### API 密钥来源
