@@ -5,6 +5,7 @@ export KIMI_API_KEY="替换成你自己的密钥" # 注册网址： https://www.
 export TAOBAO_API_KEY="替换成你自己的密钥" # 可以自己去找一个，也可以加我微信： ithulianwang 分享一个我验证过且效果不错的店铺（加我有优惠），这个套餐原价是 299元 3个月可以请求5000次左右
 export DEEPSEEK_API_KEY="替换成你自己的密钥" # 注册网址： https://www.deepseek.com/
 export AICODE_MIRROR_API_KEY="替换成你自己的密钥" # 注册网址： https://www.aicodemirror.com/register?invitecode=YWJB6R  加我有优惠， 微信： ithulianwang
+export GLM_API_KEY="替换成你自己的密钥" # 注册网址： https://www.bigmodel.cn/invite?icode=1qpO9kqjCyVXqT4S1TvyMgZ3c5owLmCCcMQXWcJRS8E%3D
 
 
 claude_free() {
@@ -55,6 +56,16 @@ claude_deepseek() {
     export ANTHROPIC_MODEL=deepseek-chat
     export ANTHROPIC_SMALL_FAST_MODEL=deepseek-chat
     echo "切换到 Deepseek 配置并启动 Claude"
+    claude "$@"
+}
+
+claude_glm() {
+    export ANTHROPIC_AUTH_TOKEN=${GLM_API_KEY}
+    export ANTHROPIC_BASE_URL="https://open.bigmodel.cn/api/anthropic"
+    unset ANTHROPIC_API_KEY 2>/dev/null
+    unset ANTHROPIC_MODEL 2>/dev/null
+    unset ANTHROPIC_SMALL_FAST_MODEL 2>/dev/null
+    echo "切换到 GLM 配置并启动 Claude"
     claude "$@"
 }
 
