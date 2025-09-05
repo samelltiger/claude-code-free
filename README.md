@@ -66,6 +66,7 @@
 | `claude_taobao` | 淘宝 Claude 接口 | `TAOBAO_API_KEY` |
 | `claude_deepseek` | DeepSeek 模型 | `DEEPSEEK_API_KEY` |
 | `claude_aicode` | AI Code Mirror 服务 | `AICODE_MIRROR_API_KEY` |
+| `claude_glm` | 智谱GLM接口 服务 | `GLM_API_KEY` |
 | `claude_start` | 使用当前配置 | 预先配置的设置 |
 | `claude_status` | 显示当前配置 | - |
 | `claude_clear` | 清除配置 | - |
