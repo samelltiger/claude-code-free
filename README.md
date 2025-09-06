@@ -79,7 +79,7 @@
 
 ### API 密钥来源
 
-- **免费服务**: [anyrouter.top](https://anyrouter.top)
+- **免费服务**: [anyrouter.top](https://anyrouter.top/register?aff=276f)
 - **Kimi**: [moonshot.cn](https://www.moonshot.cn/)
 - **DeepSeek**: [deepseek.com](https://www.deepseek.com/)
 - **AI Code Mirror**: [aicodemirror.com](https://www.aicodemirror.com/register?invitecode=YWJB6R)
