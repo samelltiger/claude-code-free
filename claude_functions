@@ -32,9 +32,9 @@ claude_aicode() {
 claude_kimi() {
     export ANTHROPIC_AUTH_TOKEN=${KIMI_API_KEY}
     export ANTHROPIC_BASE_URL="https://api.moonshot.cn/anthropic"
+    export ANTHROPIC_MODEL=kimi-k2-0905-preview
+    export ANTHROPIC_SMALL_FAST_MODEL=kimi-k2-0905-preview
     unset ANTHROPIC_API_KEY 2>/dev/null
-    unset ANTHROPIC_MODEL 2>/dev/null
-    unset ANTHROPIC_SMALL_FAST_MODEL 2>/dev/null
     echo "切换到 Kimi 配置并启动 Claude"
     claude "$@"
 }
