@@ -83,6 +83,7 @@
 - **Kimi**: [moonshot.cn](https://www.moonshot.cn/)
 - **DeepSeek**: [deepseek.com](https://www.deepseek.com/)
 - **AI Code Mirror**: [aicodemirror.com](https://www.aicodemirror.com/register?invitecode=YWJB6R)
+- **GLM-智谱**: [https://www.bigmodel.cn](https://www.bigmodel.cn/invite?icode=1qpO9kqjCyVXqT4S1TvyMgZ3c5owLmCCcMQXWcJRS8E%3D)
 
 ### 使用策略
 
