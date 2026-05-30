@@ -134,8 +134,16 @@
 - 公众号：
 ![](images/微信公众号.jpg)
 
-## Claude code价格全场最低
-![](./images/claude-code-month-price.png)
+## 我的产品
+
+我正在做一个英语学习网站：**Video Language Learn**。
+
+它把真实英文视频拆成可以逐句训练的学习页面，支持逐句精听、影子跟读、盲听、听写训练和重点词汇沉淀。
+
+- 首页：https://www.yueshu365.com/
+- 英语口语素材库：https://www.yueshu365.com/library/english-speaking-materials/
+- 影子跟读资料库：https://www.yueshu365.com/library/shadowing-materials/
+- 视频学英语指南：https://www.yueshu365.com/guides/how-to-learn-english-with-videos/
 
 ---
 
